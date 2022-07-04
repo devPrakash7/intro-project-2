@@ -84,7 +84,7 @@ let getInternCollege = async function (req, res) {
         }
         let collegeId = dataTobePresented._id
 
-        let intern = await internModel.find({ collegeId: collegeId }).select({ name: 1, email: 1, mobile: 1, id:1 })
+        let intern = await internModel.find({ collegeId: collegeId }).select({ name: 1, email: 1, mobile: 1, _id:1 })
         if (intern.length < 1) {
             return res.status(400).send({ status: false, message: "no intern apllied in this college" })
 
